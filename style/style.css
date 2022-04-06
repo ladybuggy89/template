@@ -1,0 +1,116 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: pink;
+  background-image: url("../img/Rectangle 1.jpg");
+  background-size: cover;
+  background-position: center top;
+  min-height: 100vh;
+  color: white;
+  margin: 0;
+}
+
+header {
+  padding: 1em 2em;
+  display: flex;
+  justify-content: space-between;
+}
+header > * {
+  display: flex;
+  align-items: center;
+}
+
+.pageLogo a {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+}
+.pageLogo b {
+  font-size: 30px;
+}
+
+nav {
+  position: relative;
+  min-height: 48px;
+}
+nav #toggler {
+  display: none;
+}
+nav label {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  right: 0;
+  top: 0;
+  cursor: pointer;
+}
+nav label div {
+  transition: 0.5s;
+  background-color: white;
+  position: absolute;
+  width: 80%;
+  left: 10%;
+  height: 10%;
+  border-radius: 5px;
+}
+nav label div:nth-child(1) {
+  top: 17.5%;
+}
+nav label div:nth-child(2) {
+  top: 45%;
+}
+nav label div:nth-child(3) {
+  top: 72.5%;
+}
+nav ul {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 0 0.7;
+  list-style: none;
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  right: 0;
+  top: 48px;
+  margin: 0;
+}
+nav ul li {
+  padding: 0.5em 0.7em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  align-items: center;
+}
+
+#toggler:checked ~ ul {
+  display: flex;
+}
+#toggler:checked ~ label div:nth-child(1) {
+  transform: rotate(45deg);
+  top: 45%;
+}
+#toggler:checked ~ label div:nth-child(2) {
+  opacity: 0;
+}
+#toggler:checked ~ label div:nth-child(3) {
+  transform: rotate(145deg);
+  top: 45%;
+}
+
+@media (min-width: 768px) {
+  label {
+    display: none;
+  }
+
+  ul {
+    display: flex !important;
+    flex-direction: row !important;
+    position: static !important;
+  }
+}/*# sourceMappingURL=style.css.map */
